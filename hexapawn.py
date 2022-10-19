@@ -1,18 +1,24 @@
 """
 Gra:
     Hexapawn[https://pl.wikipedia.org/wiki/Hexapawn]
-    Moliwość zagrania[https://www.mrozilla.cz/lab/hexapawn]
+    Mozliwość zagrania[https://www.mrozilla.cz/lab/hexapawn]
 
 Autorzy:
-    Damian Kijańczuk
-    Szymon Ciemny 
+    Damian Kijańczuk s20154
+    Szymon Ciemny    s21355
+
+Skrócone zasady:
+    Gracze dysponują pionkami ustawionymi po przeciwległych stronach. Ruchy są wykonywane na przemian w linii pionowej,
+    natomiast zbijanie pionków odbywa się po linii ukośnej. Wygrywa ten, kto doprowadzi swój pionek na linię startu przeciwnika,
+    zbije wszystkie pionki przeciwnika lub gdy przeciwnik nie będzie w stanie wykonać ruchu.
 
 Przygotowanie środowiska:
     Oprócz języka Python, potrzebna takze będzie biblioteka easyAI[https://zulko.github.io/easyAI/installation.html]
 
 Uruchomienie oraz instrukcja:
     By uruchomić wpisujemy przykładowo
-    'python3 hexapawn.py --player1 AI --player2 AI'
+    'python3 hexapawn.py --player1 AI --player2 AI' albo
+    'python3 hexapawn.py --player1 Human --player2 AI'
 
     By wyśwetlić mozliwe ruchy nalezy wpisać
     'show moves'
@@ -192,7 +198,7 @@ if __name__ == "__main__":
     my_parser.add_argument('--aiDepth',
         action='store',
         type=int,
-        help="Numer od moves that AI computes forward")
+        help="Number od moves that AI computes forward")
     args = my_parser.parse_args()
 
     # Assign commandline arguments to variables
@@ -210,12 +216,12 @@ if __name__ == "__main__":
     scoring = lambda game: -100 if game.lose() else 0
     #scoring = lambda game: 100 if game.win() else 0
     if args.player1 == "AI":
-        PLAYER1 = AI_Player(Negamax(10, scoring))
+        PLAYER1 = AI_Player(Negamax(AI_DEPTH, scoring))
     elif args.player1 == "Human":
         PLAYER1 = Human_Player()
 
     if args.player2 == "AI":
-        PLAYER2 = AI_Player(Negamax(10, scoring))
+        PLAYER2 = AI_Player(Negamax(AI_DEPTH, scoring))
     elif args.player2 == "Human":
         PLAYER2 = Human_Player()
 
