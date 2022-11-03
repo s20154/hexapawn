@@ -228,3 +228,7 @@ if __name__ == "__main__":
     game = Hexapawn([PLAYER1, PLAYER2], size=(BOARD_SIZE,BOARD_SIZE))
     game.play()
     print("player %d wins after %d turns " % (game.opponent_index, game.nmove))
+
+
+
+    
