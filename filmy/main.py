@@ -33,7 +33,7 @@ def build_arg_parser():
             help='Name of file with data')
     parser.add_argument("--amount", dest="amount", default=5, type=int,
         help='Amount of recommendations you want.')
-    parser.add_argument("--neighbours", dest="neighbours", default=3,
+    parser.add_argument("--neighbours", dest="neighbours", default=8, type=int,
         help='Amount of neighbours for the algorythmm.')
     return parser
 args = build_arg_parser().parse_args()
