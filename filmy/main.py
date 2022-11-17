@@ -10,10 +10,11 @@ Przygotowanie środowiska:
     - sklearn
 
 Uruchomienie oraz instrukcja:
-    By uruchomić wpisujemy przykładowo
+    5 polecanych
     'python3 main.py --name "Damian Kijańczuk" --file "ratings.json"'
     'python3 main.py --name "Szymon Ciemny" --file "ratings.json"'
-    'python3 main.py --name "Damian Kijańczuk" --file "ratings.json" --amount -5'
+    5 niepolecanych 
+    'python3 main.py --name "Damian Kijańczuk" --file "ratings.json" --amount -5
 
 """
 
